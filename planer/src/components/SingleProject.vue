@@ -3,7 +3,9 @@
        <div class="actions">
            <h3 @click="showDetails = !showDetails">{{project.title}}</h3>
            <div class="icon-container">
+                <router-link :to="{name: 'EditProject', params: {id: project.id}}">
                 <PencilIcon class="icon" />
+                </router-link>
                 <TrashIcon @click="deleteProject" class="icon" />
                 <CheckIcon @click="toggleComplete" class="icon" :class="{tick: project.complete}" />
            </div>
